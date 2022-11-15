@@ -2,9 +2,9 @@
   "name": "appointmentchecker",
   "version": "1.0.0",
   "description": "",
-  "main": "sendEmail.js",
+  "main": "app.js",
   "scripts": {
-    "start": "npm install && node sendEmail.js"
+    
   },
   "repository": {
     "type": "git",
