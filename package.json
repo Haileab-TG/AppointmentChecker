@@ -4,6 +4,7 @@
   "description": "",
   "main": "cron.js",
   "scripts": {
+    "start": "node cron.js"
   },
   "repository": {
     "type": "git",
