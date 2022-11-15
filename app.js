@@ -11,7 +11,7 @@ app.use(cors());
 
 app.get('/sendEmail', async (req, res)  => {
     await sendEmail.sendEmail();
-    res.send({ date : (new Date())});
+    res.send({data: 'there you are @ 4000', date : (new Date())});
 });
 
 app.listen(4000, ()=> {
