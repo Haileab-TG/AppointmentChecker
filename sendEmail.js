@@ -4,6 +4,10 @@ const Epass= process.env.Epass;
 const Euser = process.env.Euser;
 const From = process.env.From;
 const To = process.env.To;
+const cron = require('node-cron');
+
+
+
 
 const sendEmail = () => {
   const transporter = nodemailer.createTransport({
@@ -30,4 +34,8 @@ const sendEmail = () => {
   });
 }
 
-sendEmail();
+// Schedule tasks to be run on the server.
+cron.schedule('*/3 * * * * *', function() {
+  sendEmail();
+  console.log('running a task every minute');
+});
