@@ -44,7 +44,7 @@ const sendEmail = () => {
 
 
 app.get('/sendEmail', async (req, res)  => {
-    await sendEmail();
+    sendEmail();
     res.send({data: 'there you are @ 4000', date : (new Date())});
 });
 
