@@ -17,17 +17,19 @@ const sendEmail = () => {
   const options = {
     from: From,
     to: To,
-    subject: "sending email first",
+    subject: new Date() +" sending email first",
     text: "Hi there from HTG.IT"
   }
   
-  transporter.sendMail(options, function(err, info){
+  const result = transporter.sendMail(options, function(err, info){
     if (err){
       console.log(err);
-      return;
+      return ;
     }
-    console.log(info.response)
+     console.log(info.response);
   });
 }
 
-export default sendEmail;
+module.exports = {
+  sendEmail
+}

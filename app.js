@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const axios = require('axios');
 const cors = require('cors');
-import sendEmail from './sendEmail';
+const  sendEmail = require('./sendEmail');
 
 const app = express();
 app.use(bodyParser.json());
@@ -10,8 +10,8 @@ app.use(cors());
 
 
 app.get('/sendEmail', async (req, res)  => {
-    const emailResult = await sendEmail();
-    res.send(emailResult);
+    await sendEmail.sendEmail();
+    res.send({ date : (new Date())});
 });
 
 app.listen(4000, ()=> {
