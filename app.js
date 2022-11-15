@@ -17,6 +17,7 @@ const From = process.env.From;
 const To = process.env.To;
 
 const sendEmail = () => {
+  console.log("Send email has called")
   const transporter = nodemailer.createTransport({
     service: 'hotmail',
     auth: {
